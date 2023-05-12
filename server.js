@@ -1,7 +1,7 @@
 import express from "express";
 import pg from "pg";
 import dotenv from "dotenv";
-dotenv.donfig();
+dotenv.config();
 
 const server = express();
 const PORT = 3000;
