@@ -1,2 +1,4 @@
-INSERT INTO todo (name, priority) VALUES ('Do the homework', 3);
-INSERT INTO todo (name, priority) VALUES ('Pay the taxes', 1);
+INSERT INTO todo (name) VALUES ('Do the homework');
+INSERT INTO todo (name) VALUES ('Pay the taxes');
+INSERT INTO todo (name) VALUES ('Workout');
+INSERT INTO todo (name) VALUES ('Grocery');
