@@ -1,0 +1,13 @@
+body {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+#container {
+  margin: auto;
+  /* width: 60%; */
+  border: solid black 3px;
+  align-items: center;
+  align-self: center;
+}

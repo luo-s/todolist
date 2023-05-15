@@ -21,13 +21,28 @@ function createNew(todo) {
   // todo is obj with 2 properties (id, name)
   const newToDo = document.createElement("li");
   newToDo.innerText = `${todo.name}`;
+  // add update event
+  newToDo.addEventListener("click", (event) => {});
+
+  // add delete button
+  const del = document.createElement("button");
+  del.setAttribute("type", "submit");
+  del.innerText = "delete";
+  newToDo.prepend(del);
+  // add delete event listener
+  del.addEventListener("click", (event) => {
+    event.preventDefault();
+    fetch(`/todo/${todo.id}`, {
+      method: "DELETE",
+    });
+    refresh();
+  });
   return newToDo;
 }
 
-// add new todo
+// add submit event
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(input.value);
   // update backend DB -- send post request
   fetch("/todo", {
     method: "POST",

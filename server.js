@@ -22,11 +22,16 @@ server.get("/todo", (req, res) => {
 
 server.post("/todo", (req, res) => {
   const { name } = req.body;
-  db.query("INSERT INTO todo (name) VALUES ($1) RETURNING *", [name]).then(
-    (data) => {
-      res.send(data.rows[0]);
-    }
-  );
+  db.query("INSERT INTO todo (name) VALUES ($1)", [name]).then(() => {
+    res.send("todo added");
+  });
+});
+
+server.delete("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  db.query("DELETE FROM todo WHERE id = $1", [id]).then(() => {
+    res.send("todo deleted");
+  });
 });
 
 server.listen(PORT, function () {
