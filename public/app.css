@@ -1,13 +1,70 @@
 body {
   margin: auto;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
   text-align: center;
-  align-items: center;
 }
+
+/* h1 {
+  margin: auto;
+} */
 
 #container {
   margin: auto;
-  /* width: 60%; */
-  border: solid black 3px;
-  align-items: center;
-  align-self: center;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+  height: 60%;
+}
+
+#list {
+  width: 100%;
+  margin: auto;
+}
+
+.todo {
+  margin: auto;
+  height: 40px;
+  padding: 5px;
+  width: 100%;
+}
+
+.newToDo {
+  width: 80%;
+  padding: 5px;
+  height: 18px;
+  margin: 3px;
+  border: 0.5px solid #04aa6d;
+  padding: 6px 12px;
+  font-size: 1rem;
+}
+
+#action {
+  width: 50%;
+  margin: auto;
+}
+
+#form {
+  margin: auto;
+  text-align: center;
+  /* height: 80px; */
+}
+#input {
+  padding: 5px;
+  height: 18px;
+  margin: 3px;
+  border: 0.5px solid #04aa6d;
+  padding: 6px 12px;
+  font-size: 1rem;
+}
+
+button {
+  background: #04aa6d;
+  color: white;
+  height: 30px;
+  margin: 3px;
+  border: 0;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 10%;
 }

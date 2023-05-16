@@ -15,19 +15,35 @@ function refresh() {
         list.append(createNew(todo));
       }
     });
+  input.value = "";
 }
 // create new todo as <li>
 function createNew(todo) {
   // todo is obj with 2 properties (id, name)
-  const newToDo = document.createElement("li");
-  newToDo.innerText = `${todo.name}`;
+  const newToDo = document.createElement("form");
+  newToDo.className = "todo";
   // add update event
-  newToDo.addEventListener("click", (event) => {});
+  const update = document.createElement("input");
+  update.setAttribute("id", `${todo.id}`);
+  update.className = "newToDo";
+  update.setAttribute("type", "text");
+  update.setAttribute("placeholder", `${todo.name}`);
+  newToDo.append(update);
+  newToDo.addEventListener("submit", (event) => {
+    event.preventDefault();
+    fetch(`todo/${todo.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: update.value }),
+    });
+    refresh();
+  });
 
-  // add delete button
-  const del = document.createElement("button");
-  del.setAttribute("type", "submit");
-  del.innerText = "delete";
+  // add delete/checkbox button
+  const del = document.createElement("input");
+  del.setAttribute("type", "checkbox");
   newToDo.prepend(del);
   // add delete event listener
   del.addEventListener("click", (event) => {

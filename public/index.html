@@ -13,17 +13,22 @@
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&family=Titillium+Web:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>To-do List</h1>
+
     <div id="container">
-      <ul id="list">
-        <li class="todo">This is a test</li>
-      </ul>
+      <ul id="list"></ul>
     </div>
-    <div class="action">
+    <div id="action">
       <form id="form">
-        <input id="input" />
+        <input id="input" placeholder="New To-Do..." />
         <button type="submit">Add</button>
       </form>
     </div>

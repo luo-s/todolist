@@ -34,6 +34,14 @@ server.delete("/todo/:id", (req, res) => {
   });
 });
 
+server.patch("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  const { name } = req.body;
+  db.query("UPDATE todo SET name = $1 WHERE id = $2", [name, id]).then(() => {
+    res.send("todo updated");
+  });
+});
+
 server.listen(PORT, function () {
   console.log(`listening on port: ${PORT}`);
 });
